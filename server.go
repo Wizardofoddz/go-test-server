@@ -30,6 +30,11 @@ type Server interface {
 	// Open starts the server
 	Open() error
 
+	// Reset clears all requests and responses. This
+	// should be called between every test to prevent
+	// tests from affecting each other.
+	Reset()
+
 	// SetGETResponse sets the string response
 	// for the given key where key is "path?query"
 	// The response will automatically be an HTTP 200
