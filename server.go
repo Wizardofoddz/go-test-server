@@ -120,9 +120,7 @@ func (s *_Server) SetPOSTResponseBody(key, responseBody string) {
 }
 
 func (s *_Server) URL() *url.URL {
-	var u *url.URL
-	*u = *s.url
-	return u
+	return s.url
 }
 
 // privates
