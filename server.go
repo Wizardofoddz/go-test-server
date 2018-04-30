@@ -49,7 +49,7 @@ type Server interface {
 	SetPOSTResponseBody(key, body string)
 
 	// URL returns the url where the server can be found
-	URL() url.URL
+	URL() *url.URL
 }
 
 type _Server struct {
@@ -119,8 +119,8 @@ func (s *_Server) SetPOSTResponseBody(key, responseBody string) {
 	}
 }
 
-func (s *_Server) URL() url.URL {
-	return *s.url
+func (s *_Server) URL() *url.URL {
+	return s.url
 }
 
 // privates
